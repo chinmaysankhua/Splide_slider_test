@@ -106,6 +106,7 @@ header {
 }
 
 /* Watch Image Styles */
+
 .watch-image-floating {
     position: absolute;
     right: 100px;
@@ -113,7 +114,7 @@ header {
     transform: translateY(-50%);
     max-width: 280px;
     filter: drop-shadow(0px 10px 30px rgba(0, 0, 0, 0.2));
-    animation: float 5s ease-in-out infinite;
+    /* animation: float 5s ease-in-out infinite; */
     z-index: 2;
 }
 
@@ -163,6 +164,7 @@ header {
 
 .slide-subtitle span {
     margin-left: 8px;
+    color: #000;
     font-weight: bold;
 }
 
@@ -170,7 +172,7 @@ header {
     font-size: 16px;
     line-height: 1.6;
     margin-bottom: 30px;
-    color: rgba(255, 255, 255, 0.9);
+    color: rgba(0, 0, 0, 0.9);
 }
 
 .price {
@@ -241,7 +243,8 @@ header {
 }
 
 .splide__arrow--prev {
-    left: 20px;
+    /* left: 20px; */
+    left: 52em;
 }
 
 .splide__arrow--next {
@@ -333,6 +336,7 @@ header {
     
     .slide-subtitle {
         font-size: 16px;
+
     }
     
     .slide-description {
