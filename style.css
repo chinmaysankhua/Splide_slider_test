@@ -1,0 +1,553 @@
+
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+/* Header and Navigation Styles */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    padding: 20px 40px;
+    transition: background-color 0.3s ease;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 28px;
+}
+
+.logo img {
+    width: auto;
+    height: 40px;
+    margin-right: 10px;
+    transition: transform 0.3s ease;
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-link {
+    color: #000;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-link:hover {
+    color: #555;
+}
+
+.sign-up-btn {
+    background-color: #000;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 8px 20px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.sign-up-btn:hover {
+    background-color: #333;
+    transform: translateY(-2px);
+}
+
+/* Splide Slider Custom Styles */
+.splide {
+    height: 100vh;
+    width: 100%;
+}
+
+.splide__track,
+.splide__list {
+    height: 100%;
+}
+
+.slide {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    display: flex;
+}
+
+.slide-right {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 60px;
+}
+
+/* Watch Image Styles */
+.watch-image-floating {
+    position: absolute;
+    right: 100px;
+    top: 50%;
+    transform: translateY(-50%);
+    max-width: 280px;
+    filter: drop-shadow(0px 10px 30px rgba(0, 0, 0, 0.2));
+    animation: float 5s ease-in-out infinite;
+    z-index: 2;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(-50%) translateX(0);
+    }
+
+    50% {
+        transform: translateY(-50%) translateX(-10px);
+    }
+
+    100% {
+        transform: translateY(-50%) translateX(0);
+    }
+}
+
+/* Content Styles */
+.content-container {
+    max-width: 600px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    position: relative;
+    z-index: 3;
+}
+
+.is-active .content-container {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.3s;
+}
+
+.slide-title {
+    font-size: 42px;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #fff;
+}
+
+.slide-subtitle {
+    font-size: 24px;
+    margin-bottom: 20px;
+    display: flex;
+    color: #fff;
+}
+
+.slide-subtitle span {
+    margin-left: 8px;
+    font-weight: bold;
+}
+
+.slide-description {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.price {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    color: #fff;
+}
+
+/* Social Icons */
+.social-icons {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.social-icon {
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.social-icon:hover {
+    background-color: rgba(255, 255, 255, 0.4);
+    transform: translateY(-3px);
+}
+
+.social-icon img {
+    width: 16px;
+    height: 16px;
+}
+
+/* Custom Splide Arrows */
+.splide__arrows {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 5;
+}
+
+.splide__arrow {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.3);
+    opacity: 1;
+    transition: background-color 0.3s, transform 0.3s;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.splide__arrow:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.splide__arrow svg {
+    fill: white;
+    width: 16px;
+    height: 16px;
+}
+
+.splide__arrow--prev {
+    left: 20px;
+}
+
+.splide__arrow--next {
+    right: 20px;
+}
+
+/* Custom Splide Pagination */
+.splide__pagination {
+    bottom: 30px;
+}
+
+.splide__pagination__page {
+    width: 10px;
+    height: 10px;
+    margin: 0 5px;
+    background-color: rgba(255, 255, 255, 0.5);
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.splide__pagination__page.is-active {
+    background-color: #fff;
+    transform: scale(1.2);
+}
+
+/* Improved Responsive Styles */
+/* Tablet Styles */
+@media (max-width: 1024px) {
+    .slide-right {
+        padding: 40px;
+    }
+
+    .watch-image-floating {
+        right: 50px;
+        max-width: 220px;
+    }
+
+    .slide-title {
+        font-size: 32px;
+    }
+
+    .slide-subtitle {
+        font-size: 20px;
+    }
+
+    .price {
+        font-size: 28px;
+    }
+    
+    .social-icon {
+        width: 36px;
+        height: 36px;
+    }
+    
+    .splide__arrow {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+/* Mobile Landscape Styles */
+@media (max-width: 812px) and (orientation: landscape) {
+    .slide {
+        flex-direction: column;
+    }
+    
+    .watch-image-floating {
+        position: relative;
+        right: auto;
+        top: auto;
+        transform: none;
+        margin: 20px auto;
+        max-width: 180px;
+        animation: none;
+        order: -1;
+    }
+    
+    .slide-right {
+        padding: 20px;
+        justify-content: flex-start;
+    }
+    
+    .content-container {
+        max-width: 100%;
+    }
+    
+    .slide-title {
+        font-size: 24px;
+    }
+    
+    .slide-subtitle {
+        font-size: 16px;
+    }
+    
+    .slide-description {
+        font-size: 14px;
+        margin-bottom: 15px;
+    }
+    
+    .price {
+        font-size: 22px;
+        margin-bottom: 15px;
+    }
+}
+
+/* Mobile Portrait Styles */
+@media (max-width: 768px) {
+    header {
+        padding: 15px 20px;
+    }
+
+    .nav-links {
+        display: none;
+        background-color: inherit;
+    }
+
+    .nav-links.show {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: inherit;
+        padding: 20px;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+        z-index: 200;
+    }
+    
+    .nav-links.show .nav-link {
+        padding: 12px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .mobile-menu-btn {
+        display: block;
+    }
+
+    .slide-right {
+        padding: 30px 20px;
+        padding-top: 80px;
+        align-items: center;
+        text-align: center;
+        justify-content: flex-start;
+    }
+
+    .content-container {
+        max-width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .slide-title {
+        font-size: 28px;
+    }
+
+    .slide-subtitle {
+        font-size: 18px;
+        justify-content: center;
+    }
+
+    .slide-description {
+        font-size: 14px;
+        margin-bottom: 20px;
+    }
+
+    .price {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+    .watch-image-floating {
+        position: relative;
+        right: auto;
+        top: auto;
+        transform: none;
+        margin: 0 auto 20px;
+        max-width: 200px;
+        animation: none;
+        order: -1;
+    }
+    
+    .social-icons {
+        justify-content: center;
+    }
+    
+    .splide__arrow {
+        width: 36px;
+        height: 36px;
+    }
+    
+    .splide__arrow--prev {
+        left: 10px;
+    }
+    
+    .splide__arrow--next {
+        right: 10px;
+    }
+    
+    .splide__pagination {
+        bottom: 15px;
+    }
+}
+
+/* Small Mobile Styles */
+@media (max-width: 480px) {
+    header {
+        padding: 12px 15px;
+    }
+    
+    .logo img {
+        height: 32px;
+    }
+    
+    .sign-up-btn {
+        padding: 6px 14px;
+        font-size: 14px;
+    }
+    
+    .slide-right {
+        padding: 20px 15px;
+        padding-top: 70px;
+    }
+    
+    .slide-title {
+        font-size: 24px;
+    }
+    
+    .slide-subtitle {
+        font-size: 16px;
+    }
+    
+    .watch-image-floating {
+        max-width: 160px;
+        margin-bottom: 15px;
+    }
+    
+    .price {
+        font-size: 22px;
+        margin-bottom: 15px;
+    }
+    
+    .social-icon {
+        width: 32px;
+        height: 32px;
+    }
+    
+    .splide__arrow {
+        width: 30px;
+        height: 30px;
+    }
+    
+    .slide-description {
+        font-size: 13px;
+        line-height: 1.4;
+    }
+}
+
+/* Mobile Menu Button */
+.mobile-menu-btn {
+    display: none;
+    width: 30px;
+    height: 30px;
+    position: relative;
+    cursor: pointer;
+    z-index: 101;
+}
+
+.mobile-menu-btn span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: #000;
+    position: absolute;
+    left: 0;
+    transition: all 0.3s;
+}
+
+.mobile-menu-btn span:nth-child(1) {
+    top: 8px;
+}
+
+.mobile-menu-btn span:nth-child(2) {
+    top: 16px;
+}
+
+.mobile-menu-btn span:nth-child(3) {
+    top: 24px;
+}
+
+.mobile-menu-btn.open span:nth-child(1) {
+    transform: rotate(45deg);
+    top: 16px;
+}
+
+.mobile-menu-btn.open span:nth-child(2) {
+    opacity: 0;
+}
+
+.mobile-menu-btn.open span:nth-child(3) {
+    transform: rotate(-45deg);
+    top: 16px;
+}
+
+@media (max-width: 768px) {
+    .mobile-menu-btn {
+        display: block;
+    }
+}
